@@ -195,7 +195,7 @@ void loop()
 
     if (Usb.getUsbTaskState() == USB_STATE_RUNNING && Ch34x.isReady())
     {
-        uint8_t retval;
+        uint8_t retval = 0;
         char usbBuff[256];
         if (det_send_button_pressed())
         {
@@ -203,7 +203,17 @@ void loop()
             make_wx_str(); // センサから読み取って気象データの文字列を作成する。
             memset(usbBuff, 0x00, sizeof(usbBuff));
             strcpy(usbBuff, wxStr);
-            retval = Ch34x.SndData(strlen(usbBuff), usbBuff);
+            // retval = Ch34x.SndData(strlen(usbBuff), usbBuff);
+            /* 互換Nanoに搭載されている CH340C は一度に受信できるのは 32bytes までのようなので、32バイトずつ分けて送る */
+            int16_t wxLen = strlen(usbBuff);
+            uint8_t i = 0;
+            while(wxLen > 32){
+                 retval += Ch34x.SndData(32, &usbBuff[i*32]);
+                 i++;
+                 wxLen -= 32;
+                 delay(5);
+            }
+            retval += Ch34x.SndData(wxLen, &usbBuff[i*32]);
             Serial.print("SndResult:");
             Serial.println(retval);
 
