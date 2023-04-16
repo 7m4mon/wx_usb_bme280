@@ -16,6 +16,6 @@ ex: 7M4MON,JM1ZLK,35.6866,139.7911,2.0,223,342,10204,3b
 * wx_ftdi_bme280 は FTDI(FT232RL)チップバージョン、wx_ch340_bme280 はCH340チップバージョンです。
 
 
-![](https://github.com/7m4mon/wx_ftdi_bme280/blob/main/wx_ftdi_bme280_block.png)
+![](https://github.com/7m4mon/wx_usb_bme280/blob/main/wx_ftdi_bme280_block.png)
 
-![](https://github.com/7m4mon/wx_ftdi_bme280/blob/main/wx_ftdi_bme280_inside.jpg)
+![](https://github.com/7m4mon/wx_usb_bme280/blob/main/wx_ftdi_bme280_inside.jpg)
