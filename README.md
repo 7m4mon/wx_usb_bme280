@@ -18,4 +18,6 @@ ex: 7M4MON,JM1ZLK,35.6866,139.7911,2.0,223,342,10204,3b
 
 ![](https://github.com/7m4mon/wx_usb_bme280/blob/main/wx_ftdi_bme280_block.png)
 
+![](https://github.com/7m4mon/wx_usb_bme280/blob/main/wx_usb_bme280_sch.PNG)
+
 ![](https://github.com/7m4mon/wx_usb_bme280/blob/main/wx_ftdi_bme280_inside.jpg)
